@@ -32,14 +32,16 @@ console.log( human.averageSteps());
 //  Create a Recipe constructor with name, ingredients (array), and cookTime in minutes. 
 // Add a method displayRecipe() that logs the name and all ingredients in a readable list, and another method isQuickMeal() that returns true if cookTime is 30 minutes or less.
 
-// 
+// Create a Recipe constructor with attributes: name,ingredients,cookTime
+// add a method displayRecipe that prints out the name and all ingredients in a list
+// add another method isQuickMeal() that returns true if cookTime is 30 minutes or less using the if...while loop
 
   function Recipe(name,ingredients,cookTime){
       this.name = name;
        this.ingredients = ingredients;
         this.cookTime = cookTime;
         this.displayRecipe = function(){
-           console.log(`My recipe name is ${this.name}, and my ingredient are: ${this.ingredients}`);
+           console.log(`My recipe name is ${this.name}, and my ingredient are: [${this.ingredients}]`);
             
        };
        this.isQuickMeal = function() {
@@ -66,14 +68,20 @@ console.log(recipe.isQuickMeal());
 //  Create a Car object with properties like model, mileage, and serviceHistory (an array of service dates). 
 // Add a method addService(date) to add a new service record, and lastServiceDate() to return the most recent service date.
 
+// Create a Car object with properties like model, mileage, and serviceHistory
+// add a method addService(date)that takes in the date and adds it to service record
+// add a method lastServiceDate() that returns the most recent service
+
  const car = {
     model:'Harrier',
     mileage: '30,000 miles',
     serviceHistory:['02/10/25','03/11/25','10/12/25'],
 
-    addService: function(){
-         car.serviceHistory.push('16/12/25');
-            return car
+    addService: function(date){
+              
+         serviceHistory = this.serviceHistory.push(date)
+         return car.serviceHistory
+            
     },
     lastServiceDate: function(){
         return car.serviceHistory.pop();
@@ -82,7 +90,8 @@ console.log(recipe.isQuickMeal());
     
     console.log({car});
     
-    console.log(car.addService());
+    console.log(car.addService('16/12/25'));
+     
     console.log(car.lastServiceDate());
     
       
